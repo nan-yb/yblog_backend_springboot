@@ -1,4 +1,4 @@
-package com.yblog.domain.login;
+package com.yblog.domain.main;
 
 import org.springframework.web.bind.annotation.RestController;
 

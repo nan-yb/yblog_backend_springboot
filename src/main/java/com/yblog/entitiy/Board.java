@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -19,6 +19,10 @@ public class Board {
 
     private String slug;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createAt;
+    private LocalDateTime createAt;
+
+    @PrePersist // insert시 동작 / 비영속 -> 영속
+    public void onCreate(){
+        this.createAt = LocalDateTime.now();
+    }
 }
