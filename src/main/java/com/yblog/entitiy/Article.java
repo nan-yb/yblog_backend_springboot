@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
@@ -35,6 +36,17 @@ public class Article {
 
     @OneToMany(mappedBy = "article")
     private List<Comment> commentList;
+
+    private LocalDateTime createAt;
+    private LocalDateTime updateAt;
+    @PrePersist // insert시 동작 / 비영속 -> 영속
+    public void onCreate(){
+        this.createAt = LocalDateTime.now();
+    }
+    @PreUpdate // insert시 동작 / 비영속 -> 영속
+    public void onUpdate(){
+        this.updateAt = LocalDateTime.now();
+    }
 
 
 }
