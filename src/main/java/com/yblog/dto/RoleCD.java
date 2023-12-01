@@ -19,7 +19,7 @@ public enum RoleCD {
             if (str.equals(cur.str)) {
                 return cur;
             }
-        }
+        }\
 
         return null;
 //        throw new AuthException("잘못된 롤입니다");
