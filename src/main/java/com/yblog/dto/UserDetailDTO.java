@@ -18,7 +18,6 @@ public class UserDetailDTO implements UserDetails {
     Logger log = LoggerFactory.getLogger(getClass());
 
     private final Member member;
-
     public UserDetailDTO(Member member) {
         this.member = member;
     }
