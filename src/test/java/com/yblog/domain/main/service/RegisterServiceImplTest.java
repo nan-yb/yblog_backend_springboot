@@ -11,7 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.lenient;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class RegisterServiceImplTest {
@@ -33,13 +33,17 @@ class RegisterServiceImplTest {
 
     @Test
     void createMember() {
+        //given
+        doReturn(initMember()).when(repository).save(any());
 
         // when
-        Member member = initMember();
-        lenient().when(service.createMember(any())).thenReturn(member);
+        Member member = service.createMember(new Member());
 
         // then
         assertEquals(member.getName() , "test2");
+
+        // verify
+        verify(repository, times(1)).save(any());
     }
 
 
