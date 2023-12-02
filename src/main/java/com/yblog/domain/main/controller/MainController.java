@@ -1,4 +1,4 @@
-package com.yblog.domain.main;
+package com.yblog.domain.main.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
