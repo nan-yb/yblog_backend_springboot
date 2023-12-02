@@ -2,14 +2,18 @@ package com.yblog.security.dao;
 
 import com.yblog.dto.UserDetailDTO;
 import com.yblog.entitiy.Member;
+import com.yblog.repositroy.MemberRepository;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 
 @Repository
 public class UserDao {
+
+    private final MemberRepository memberRepository;
     private final EntityManager em;
-    public UserDao(EntityManager em) {
+    public UserDao(MemberRepository memberRepository, EntityManager em) {
+        this.memberRepository = memberRepository;
         this.em = em;
     }
 
@@ -18,8 +22,7 @@ public class UserDao {
     }
 
     public UserDetailDTO getUserAccount(String userEmail){
-        Member member = new Member();
-        return new UserDetailDTO(member);
+        return new UserDetailDTO(memberRepository.findByUserEmail(userEmail));
     }
 
     public void updateAccessKey(Member vo){

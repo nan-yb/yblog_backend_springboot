@@ -29,7 +29,7 @@ public class UserAuthenticationProvider implements AuthenticationProvider {
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
         if(!passwordEncoder.matches(password , dbPassword)){
-            throw new BadCredentialsException("패스워드 ");
+            throw new BadCredentialsException("패스워드가 틀렸습니다.");
         }
 
         return new UsernamePasswordAuthenticationToken(userDetails , null ,  userDetails.getAuthorities());
