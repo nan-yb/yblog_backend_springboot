@@ -1,24 +1,21 @@
 package com.yblog.security.config;
 
-import com.yblog.security.service.UserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
-@EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig{
 
-    private final UserDetailService service;
     private final UserAuthenticationProvider userAuthenticationProvider;
-
-    public SecurityConfig(UserDetailService service, UserAuthenticationProvider userAuthenticationProvider) {
-        this.service = service;
+    public SecurityConfig(UserAuthenticationProvider userAuthenticationProvider) {
         this.userAuthenticationProvider = userAuthenticationProvider;
     }
 
@@ -46,6 +43,14 @@ public class SecurityConfig{
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout.api"))
                 .logoutSuccessUrl("/")
                 .invalidateHttpSession(true);
+
+
+        http.sessionManagement( s -> s.sessionFixation(SessionManagementConfigurer.SessionFixationConfigurer::changeSessionId)
+                .maximumSessions(1)
+                .maxSessionsPreventsLogin(false)
+                .expiredUrl("/")
+
+        );
 
         // 중복 로그인
         // http.sessionManagement()

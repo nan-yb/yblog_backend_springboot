@@ -23,13 +23,4 @@ public class UserDetailService implements UserDetailsService {
     }
     return user;
   }
-
 }
-
-/**
- * Modification Information
- * ------------ ---------- ---------------------
- * 수정일자 수정자 수정내용
- * ------------ ---------- ---------------------
- * 
- */

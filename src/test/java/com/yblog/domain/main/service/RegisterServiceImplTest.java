@@ -1,7 +1,7 @@
 package com.yblog.domain.main.service;
 
 import com.yblog.entitiy.Member;
-import com.yblog.repositroy.MemberRepository;
+import com.yblog.domain.common.repository.MemberRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -15,10 +15,8 @@ import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class RegisterServiceImplTest {
-
     @InjectMocks
     private RegisterServiceImpl service;
-
     @Mock
     private MemberRepository repository;
 
@@ -35,16 +33,11 @@ class RegisterServiceImplTest {
     void createMember() {
         //given
         doReturn(initMember()).when(repository).save(any());
-
         // when
         Member member = service.createMember(new Member());
-
         // then
         assertEquals(member.getName() , "test2");
-
         // verify
         verify(repository, times(1)).save(any());
     }
-
-
 }
