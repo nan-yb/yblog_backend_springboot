@@ -16,7 +16,7 @@ public class CustomAuthSuccessHandler extends SimpleUrlAuthenticationSuccessHand
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
             Authentication authentication) throws IOException, ServletException {
 
-        setDefaultTargetUrl("/loginHandler?error=false");
+        setDefaultTargetUrl("/");
 
         super.onAuthenticationSuccess(request, response, authentication);
     }
