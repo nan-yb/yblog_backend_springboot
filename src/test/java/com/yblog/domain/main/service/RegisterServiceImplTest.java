@@ -1,6 +1,6 @@
 package com.yblog.domain.main.service;
 
-import com.yblog.entitiy.Member;
+import com.yblog.entity.Member;
 import com.yblog.domain.common.repository.MemberRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

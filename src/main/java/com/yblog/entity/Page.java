@@ -1,4 +1,4 @@
-package com.yblog.entitiy;
+package com.yblog.entity;
 
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;

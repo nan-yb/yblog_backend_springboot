@@ -1,7 +1,7 @@
 package com.yblog.security.dao;
 
 import com.yblog.dto.UserDetailDTO;
-import com.yblog.entitiy.Member;
+import com.yblog.entity.Member;
 import com.yblog.domain.common.repository.MemberRepository;
 import org.springframework.stereotype.Repository;
 
