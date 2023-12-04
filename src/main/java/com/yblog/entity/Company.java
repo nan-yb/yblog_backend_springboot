@@ -1,5 +1,4 @@
-package com.yblog.entitiy;
-
+package com.yblog.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,21 +6,22 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Entity
 @Getter
 @Setter
-@Entity
-public class Comment {
+public class Company {
 
     @Id
     @GeneratedValue
-    @Column(name="COMMENT_ID")
+    @Column(name="COMPANY_ID")
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "ARTICLE_ID")
-    private Article article;
-
-    private String content;
+    private String name;
+    private String about;
+    private String url;
+    private String imgAddress;
+    private int reviewScore;
+    private int realtimeScore;
 
     private LocalDateTime createAt;
 

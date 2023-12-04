@@ -1,6 +1,6 @@
 package com.yblog.domain.main.controller;
 
-import com.yblog.entitiy.Member;
+import com.yblog.entity.Member;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

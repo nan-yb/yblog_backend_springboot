@@ -1,4 +1,4 @@
-package com.yblog.entitiy;
+package com.yblog.entity;
 
 import lombok.Getter;
 import lombok.Setter;
