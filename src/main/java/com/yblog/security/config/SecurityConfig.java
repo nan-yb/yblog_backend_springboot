@@ -27,6 +27,7 @@ public class SecurityConfig {
                 .anyRequest().permitAll();
 
         http.formLogin()
+                .loginPage("/")
                 .loginProcessingUrl("/login")
                 .defaultSuccessUrl("/")
                 .usernameParameter("email")

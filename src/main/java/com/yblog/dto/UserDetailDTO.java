@@ -10,7 +10,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Objects;
 
 
 public class UserDetailDTO implements UserDetails {
@@ -31,10 +30,11 @@ public class UserDetailDTO implements UserDetails {
         log.info("role : " + role);
         log.info("=========================================================");
 
-        RoleCD roleCd = RoleCD.of(role);
+//        RoleCD roleCd = RoleCD.of(role);
         String rolePrefix = "ROLE_";
 
-        auth.add(new SimpleGrantedAuthority(rolePrefix + Objects.requireNonNull(roleCd).securityName));
+//        auth.add(new SimpleGrantedAuthority(rolePrefix + Objects.requireNonNull(roleCd).securityName));
+        auth.add(new SimpleGrantedAuthority(rolePrefix + "NORMAL"));
         return auth;
     }
 
