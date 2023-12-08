@@ -1,7 +1,9 @@
-package com.yblog.domain.main.service;
+package com.yblog.domain.service.impl;
 
+import com.yblog.domain.service.impl.RegisterServiceImpl;
+import com.yblog.dto.RoleCD;
 import com.yblog.entity.Member;
-import com.yblog.domain.common.repository.MemberRepository;
+import com.yblog.domain.repository.MemberRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -25,7 +27,7 @@ class RegisterServiceImplTest {
         member.setName("test2");
         member.setEmail("test2");
         member.setPassword(new BCryptPasswordEncoder().encode("test2"));
-        member.setAuthCd("N");
+        member.setRoleCd(RoleCD.NORMAL);
         return member;
     }
 

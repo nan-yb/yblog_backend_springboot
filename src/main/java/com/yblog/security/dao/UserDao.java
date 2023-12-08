@@ -2,7 +2,7 @@ package com.yblog.security.dao;
 
 import com.yblog.dto.UserDetailDTO;
 import com.yblog.entity.Member;
-import com.yblog.domain.common.repository.MemberRepository;
+import com.yblog.domain.repository.MemberRepository;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

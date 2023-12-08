@@ -1,4 +1,4 @@
-package com.yblog.domain.common.repository;
+package com.yblog.domain.repository;
 
 import com.yblog.entity.Member;
 import org.springframework.data.jpa.repository.JpaRepository;

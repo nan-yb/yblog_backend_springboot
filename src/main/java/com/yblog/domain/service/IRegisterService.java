@@ -1,4 +1,4 @@
-package com.yblog.domain.main.service;
+package com.yblog.domain.service;
 
 import com.yblog.entity.Member;
 

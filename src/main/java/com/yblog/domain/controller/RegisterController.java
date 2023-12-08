@@ -1,6 +1,6 @@
-package com.yblog.domain.main.controller;
+package com.yblog.domain.controller;
 
-import com.yblog.domain.main.service.IRegisterService;
+import com.yblog.domain.service.IRegisterService;
 import com.yblog.entity.Member;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

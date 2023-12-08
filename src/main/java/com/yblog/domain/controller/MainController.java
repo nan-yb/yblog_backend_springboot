@@ -1,4 +1,4 @@
-package com.yblog.domain.main.controller;
+package com.yblog.domain.controller;
 
 import com.yblog.base.ApiResponse;
 import org.springframework.http.HttpStatus;

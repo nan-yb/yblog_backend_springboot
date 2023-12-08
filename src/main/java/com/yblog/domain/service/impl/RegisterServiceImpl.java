@@ -1,9 +1,10 @@
-package com.yblog.domain.main.service;
+package com.yblog.domain.service.impl;
 
 
+import com.yblog.domain.service.IRegisterService;
 import com.yblog.dto.RoleCD;
 import com.yblog.entity.Member;
-import com.yblog.domain.common.repository.MemberRepository;
+import com.yblog.domain.repository.MemberRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -12,7 +13,7 @@ import javax.transaction.Transactional;
 
 @Transactional
 @Service
-public class RegisterServiceImpl implements IRegisterService{
+public class RegisterServiceImpl implements IRegisterService {
 
     private final MemberRepository repository;
 
