@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MainController {
     @RequestMapping(value = "/" , method = RequestMethod.GET)
-    public ApiResponse mainTest(){
-        return new ApiResponse(null , HttpStatus.OK  );
+    public void mainTest(){
     }
 }
