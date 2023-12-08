@@ -14,21 +14,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @SpringBootApplication
 @EnableRedisRepositories
 public class YblogApplication {
-
-//    @Autowired
-//    MemberRepository memberRepository;
-
-//    @Bean
-//    public void initData(){
-//        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-//        Member member = new Member();
-//        member.setName("test1");
-//        member.setPassword(passwordEncoder.encode("test1"));
-//        member.setEmail("test1");
-//        member.setAuthCd("N");
-//        memberRepository.save(member);
-//    }
-
     public static void main(String[] args) {
         SpringApplication.run(YblogApplication.class);
     }

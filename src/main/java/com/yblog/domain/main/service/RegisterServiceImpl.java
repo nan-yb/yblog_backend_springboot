@@ -1,6 +1,7 @@
 package com.yblog.domain.main.service;
 
 
+import com.yblog.dto.RoleCD;
 import com.yblog.entity.Member;
 import com.yblog.domain.common.repository.MemberRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -28,6 +29,9 @@ public class RegisterServiceImpl implements IRegisterService{
         // encode
         PasswordEncoder encoder = new BCryptPasswordEncoder();
         member.setPassword(encoder.encode(member.getPassword()));
+
+        // 권한 부여
+        member.setRoleCd(RoleCD.NORMAL);
 
         return repository.save(member);
     }

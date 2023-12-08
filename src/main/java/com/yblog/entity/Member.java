@@ -1,5 +1,6 @@
 package com.yblog.entity;
 
+import com.yblog.dto.RoleCD;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,7 +20,8 @@ public class Member implements Serializable {
     private String name;
     private String email;
     private String password;
-    private String authCd;
+    @Enumerated
+    private RoleCD roleCd;
 
     @ManyToOne
     @JoinColumn(name="COMPANY_ID")
