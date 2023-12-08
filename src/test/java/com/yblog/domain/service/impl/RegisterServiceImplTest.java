@@ -22,11 +22,14 @@ class RegisterServiceImplTest {
     @Mock
     private MemberRepository repository;
 
+    @Mock
+    private BCryptPasswordEncoder encoder;
+
     private Member initMember(){
         Member member = new Member();
         member.setName("test2");
         member.setEmail("test2");
-        member.setPassword(new BCryptPasswordEncoder().encode("test2"));
+        member.setPassword("1234");
         member.setRoleCd(RoleCD.NORMAL);
         return member;
     }
@@ -36,7 +39,7 @@ class RegisterServiceImplTest {
         //given
         doReturn(initMember()).when(repository).save(any());
         // when
-        Member member = service.createMember(new Member());
+        Member member = service.createMember(initMember());
         // then
         assertEquals(member.getName() , "test2");
         // verify

@@ -1,5 +1,6 @@
 package com.yblog.security.service;
 
+import com.yblog.dto.RoleCD;
 import com.yblog.dto.UserDetailDTO;
 import com.yblog.entity.Member;
 import com.yblog.security.dao.UserDao;
@@ -29,7 +30,7 @@ class UserDetailServiceTest {
         member.setName("test2");
         member.setEmail("test2");
         member.setPassword(new BCryptPasswordEncoder().encode("test2"));
-        member.setAuthCd("N");
+        member.setRoleCd(RoleCD.NORMAL);
         return member;
     }
     @Test
