@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
 
 
 public class UserDetailDTO implements UserDetails {
@@ -24,17 +25,15 @@ public class UserDetailDTO implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> auth = new ArrayList<GrantedAuthority>();
-        String role = member.getAuthCd();
+        RoleCD role = member.getRoleCd();
 
         log.info("=========================================================");
         log.info("role : " + role);
         log.info("=========================================================");
 
-//        RoleCD roleCd = RoleCD.of(role);
         String rolePrefix = "ROLE_";
 
-//        auth.add(new SimpleGrantedAuthority(rolePrefix + Objects.requireNonNull(roleCd).securityName));
-        auth.add(new SimpleGrantedAuthority(rolePrefix + "NORMAL"));
+        auth.add(new SimpleGrantedAuthority(rolePrefix + Objects.requireNonNull(role).securityName));
         return auth;
     }
 
