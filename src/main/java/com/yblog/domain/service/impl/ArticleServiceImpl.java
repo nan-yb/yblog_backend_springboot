@@ -33,4 +33,9 @@ public class ArticleServiceImpl implements IArticleService {
     public List<Article> getArticleList() {
         return repository.findAll();
     }
+
+    @Override
+    public List<Article> getListRecentArticle() {
+        return repository.getListRecentArticle();
+    }
 }

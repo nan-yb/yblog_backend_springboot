@@ -31,7 +31,7 @@ public class UserDetailDTO implements UserDetails {
         log.info("role : " + role);
         log.info("=========================================================");
 
-        String rolePrefix = "ROLE_";
+        final String rolePrefix = "ROLE_";
 
         auth.add(new SimpleGrantedAuthority(rolePrefix + Objects.requireNonNull(role).securityName));
         return auth;

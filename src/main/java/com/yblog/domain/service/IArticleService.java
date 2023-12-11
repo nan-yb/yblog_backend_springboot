@@ -10,5 +10,5 @@ public interface IArticleService {
     Article updateArticle(Article article);
     Article getArticle(long id);
     List<Article> getArticleList();
-
+    List<Article> getListRecentArticle();
 }
