@@ -3,22 +3,19 @@ server:
 
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: 'jdbc:mysql://localhost:3306/public?useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&serverTimezone=Asia/Seoul'
-    username: root
-    password: 1234
+    url: ${POSTGRESQL_URI:jdbc:postgresql://localhost:7432/yb}
+    username: yb
+    password: yb
+    driver-class-name: org.postgresql.Driver
 
   # JPA 설정
   jpa:
-    database-platform: org.hibernate.dialect.MySQL8Dialect
-    defer-datasource-initialization : true
+    open-in-view: false
+#    defer-datasource-initialization : true
     hibernate:
       ddl-auto: update        # DB 초기화 전략 (none, create, create-drop, update, validate)
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
-        format_sql: true      # 쿼리 로그 포맷 (정렬)
-        show_sql: true        # 쿼리 로그 출력
+      format_sql: true      # 쿼리 로그 포맷 (정렬)
+      show_sql: true        # 쿼리 로그 출력
 
   # redis
   redis:
@@ -31,7 +28,6 @@ spring:
 logging:
   level:
     root: info
-
 
 # swagger
 springdoc:
