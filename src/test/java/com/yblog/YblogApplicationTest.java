@@ -10,5 +10,7 @@ class YblogApplicationTest {
     public void test(){
 
         assertEquals(1 ,1 );
+        assertEquals(1 ,1 );
+        assertEquals(1 ,1 );
     }
 }
