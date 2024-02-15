@@ -21,4 +21,13 @@ services:
     ports:
       - 6379:6379
     platform: linux/amd64
+  mongodb:
+    container_name: mongo
+    image: mongo:latest
+    restart: always
+    ports:
+      - 37017:27017
+    volumes:
+      - ~/yb/docker-volume/mongo:/data/db
+    platform: linux/amd64
 

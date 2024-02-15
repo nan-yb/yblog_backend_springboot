@@ -4,8 +4,8 @@ server:
 spring:
   datasource:
     url: ${POSTGRESQL_URI:jdbc:postgresql://localhost:7432/yb}
-    username: yb
-    password: yb
+    username: ${POSTGRESQL_ID:yb}
+    password: ${POSTGRESQL_PASSWORD:yb}
     driver-class-name: org.postgresql.Driver
 
   # JPA 설정
@@ -19,8 +19,8 @@ spring:
 
   # redis
   redis:
-    host: localhost
-    port: 6379
+    host: ${REDIS_HOST:localhost}
+    port: ${REDIS_PORT:6379}
 
   session:
     store-type: redis
